@@ -12,8 +12,8 @@ public class MenuControllerScript : MonoBehaviour
   public GameObject verticalLayoutRight;
   public GameObject verticalLayoutLeft;
   public GameObject verticalLayoutCenter;
-  public GameObject buttonPressXToStart;
-  public GameObject textPressStartToJoin;
+  public GameObject manette1;
+  public GameObject manette2;
   private int numberPlayersReady = 0;
   private bool enableJoinGame = true;
   private List<int> listPlayerID = new List<int>();
@@ -21,8 +21,16 @@ public class MenuControllerScript : MonoBehaviour
 
   private bool p1joined = false;
   private bool p2joined = false;
+  private bool p1HasChosen = false;
+  private bool p2HasChosen = false;
   private int p1placement = 1; //0 for left, 1 for center, 2 for right
   private int p2placement = 1;
+
+
+  public int maxPlayers = 2;
+
+  private List<PlayerMap> playerMap; // Maps Rewired Player ids to game player ids
+  private int gamePlayerIdCounter = 0;
 
   public static Rewired.Player GetRewiredPlayer(int gamePlayerId)
   {
@@ -39,12 +47,6 @@ public class MenuControllerScript : MonoBehaviour
     return null;
   }
 
-  // Instance
-
-  public int maxPlayers = 4;
-
-  private List<PlayerMap> playerMap; // Maps Rewired Player ids to game player ids
-  private int gamePlayerIdCounter = 0;
 
   void Awake()
   {
@@ -52,94 +54,141 @@ public class MenuControllerScript : MonoBehaviour
     instance = this; // set up the singleton
   }
 
-
+  //Lorsqu'on bouge le joystick à gauche
   void MoveControllerLeft(int i)
   {
-    if (i == 0 && p1joined)
+    if (i == 0 && p1joined && !p1HasChosen)
     {
       if (p1placement != 0)
       {
-        if (p1placement == 1)
-          verticalLayoutCenter.transform.GetChild(0).gameObject.SetActive(false);
-
-        else if (p1placement == 2)
-          verticalLayoutRight.transform.GetChild(0).gameObject.SetActive(false);
-
-        verticalLayoutLeft.transform.GetChild(0).gameObject.SetActive(true);
-        p1placement = 0;
-
+        if(!(p2placement == 0 && p2HasChosen)) //On peut choisir son perso seulement si l'autre a pas encore choisi, sinon t'es attribué d'office
+        {
+          manette1.transform.SetParent(verticalLayoutLeft.transform);
+          p1placement = 0;
+        }
       }
     }
 
-    if (i == 1 && p2joined)
+    if (i == 1 && p2joined && !p2HasChosen)
     {
       if (p2placement != 0)
       {
-
-        if (p2placement == 1)
-          verticalLayoutCenter.transform.GetChild(1).gameObject.SetActive(false);
-
-        else if (p2placement == 2)
-          verticalLayoutRight.transform.GetChild(1).gameObject.SetActive(false);
-
-        verticalLayoutLeft.transform.GetChild(1).gameObject.SetActive(true);
-        p2placement = 0;
+        if (!(p1placement == 0 && p1HasChosen))
+        {
+          manette2.transform.SetParent(verticalLayoutLeft.transform);
+          p2placement = 0;
+        }
       }
     }
   }
 
+  //Lorsqu'on bouge le joystrick à droite
   void MoveControllerRight(int i)
   {
-    if (i == 0 && p1joined)
+    if (i == 0 && p1joined && !p1HasChosen)
     {
       if (p1placement != 2)
       {
-        if (p1placement == 1)
-          verticalLayoutCenter.transform.GetChild(0).gameObject.SetActive(false);
-
-        else if (p1placement == 0)
-          verticalLayoutLeft.transform.GetChild(0).gameObject.SetActive(false);
-
-        verticalLayoutRight.transform.GetChild(0).gameObject.SetActive(true);
-        p1placement = 2;
+        if (!(p2placement == 2 && p2HasChosen))
+        {
+          manette1.transform.SetParent(verticalLayoutRight.transform);
+          p1placement = 2;
+        }
 
       }
     }
 
-    if (i == 1 && p2joined)
+    if (i == 1 && p2joined && !p2HasChosen)
     {
       if (p2placement != 2)
       {
-        if (p2placement == 1)
-          verticalLayoutCenter.transform.GetChild(1).gameObject.SetActive(false);
-
-        else if (p2placement == 0)
-          verticalLayoutLeft.transform.GetChild(1).gameObject.SetActive(false);
-
-
-        verticalLayoutRight.transform.GetChild(1).gameObject.SetActive(true);
-        p2placement = 2;
+        if (!(p1placement == 2 && p1HasChosen))
+        {
+          manette2.transform.SetParent(verticalLayoutRight.transform);
+          p2placement = 2;
+        }
 
       }
+    }
+  }
+
+
+  //Lorsqu'on appuie sur A pour valider son choix (ca bouge l'autre joueur si il était sur le même choix)
+  void ChooseCharacter(int i)
+  {
+    if (i == 0 && p1placement != 1 && !p1HasChosen)
+    {
+      if (p1placement == 0)
+      {
+        if (p2joined && p2placement == 0)
+        {
+          manette2.transform.SetParent(verticalLayoutRight.transform);
+          p2placement = 2;
+        }
+        manette1.GetComponent<UIButton>().ExecuteClick();
+        manette1.GetComponent<Button>().interactable = false;
+      }
+      else if (p1placement == 2)
+      {
+        if (p2joined && p2placement == 2)
+        {
+          manette2.transform.SetParent(verticalLayoutLeft.transform);
+          p2placement = 0;
+        }
+        manette1.GetComponent<UIButton>().ExecuteClick();
+        manette1.GetComponent<Button>().interactable = false;
+      }
+      p1HasChosen = true;
+    }
+
+
+    else if (i == 1 && p2placement != 1 && !p2HasChosen)
+    {
+      if (p2placement == 0)
+      {
+
+        if (p1joined && p1placement == 0)
+        {
+          manette1.transform.SetParent(verticalLayoutRight.transform);
+          p1placement = 2;
+        }
+        manette2.GetComponent<UIButton>().ExecuteClick();
+        manette2.GetComponent<Button>().interactable = false;
+
+      }
+      else if (p2placement == 2)
+      {
+
+        if (p1joined && p1placement == 2)
+        {
+          manette1.transform.SetParent(verticalLayoutLeft.transform);
+          p1placement = 0;
+        }
+        manette2.GetComponent<UIButton>().ExecuteClick();
+        manette2.GetComponent<Button>().interactable = false;
+
+      }
+      p2HasChosen = true;
+    }
+
+
+
+    if(p1HasChosen && p2HasChosen)//c'est ici qu'on lancera la scene
+    {
+      Debug.Log("COUCOU VICTOR LES DEUX JOUEURS ONT CHOISI LEURS PERSOS");
     }
   }
 
   void Update()
   {
 
-    /*if (Input.GetButtonDown("Cancel"))
-    {
-      GameObject buttonPlay = GameObject.Find("Button - Play");
-      EventSystem.current.SetSelectedGameObject(buttonPlay);
-      Debug.Log(EventSystem.current);
-      enableJoinGame = false;
-    }*/
+    
 
     for (int i = 0; i < ReInput.players.playerCount; i++)
     {
       if (enableJoinGame)
       {
-        if (ReInput.players.GetPlayer(i).GetButtonDown("JoinGame") && numberPlayersReady <= 2)
+        if (ReInput.players.GetPlayer(i).GetButtonDown("JoinGame") && numberPlayersReady < 2)
         {
           AssignNextPlayer(i);
           if (i == 0)
@@ -173,90 +222,25 @@ public class MenuControllerScript : MonoBehaviour
 
         else if (ReInput.players.GetPlayer(i).GetButtonDown("UISubmit"))
         {
-          if(i == 0 && p1placement != 1)
+          ChooseCharacter(i);
+        }
+
+        else if (ReInput.players.GetPlayer(i).GetButtonDown("UICancel"))
+        {
+          if(i == 0 && p1joined && p1HasChosen)
           {
-            if(p1placement == 0)
-            {
-              if (p2joined)
-              {
-                verticalLayoutLeft.transform.GetChild(1).gameObject.SetActive(false);
-                verticalLayoutRight.transform.GetChild(1).gameObject.SetActive(true);
-                p2placement = 2;
-              }
-              verticalLayoutLeft.transform.GetChild(0).GetComponent<Button>().Select();
-              verticalLayoutLeft.transform.GetChild(0).GetComponent<UIButton>().ExecuteClick();
-
-            }
-            else if (p1placement == 2)
-            {
-              if (p2joined)
-              {
-                verticalLayoutRight.transform.GetChild(1).gameObject.SetActive(false);
-                verticalLayoutLeft.transform.GetChild(1).gameObject.SetActive(true);
-                p2placement = 0;
-              }
-              verticalLayoutRight.transform.GetChild(0).GetComponent<Button>().Select();
-              verticalLayoutRight.transform.GetChild(0).GetComponent<UIButton>().ExecuteClick();
-
-            }
+            manette1.GetComponent<Button>().interactable = true;
+            p1HasChosen = false;
           }
-          if (i == 1 && p2placement != 1)
+          else if (i == 1 && p2joined && p2HasChosen)
           {
-            if (p2placement == 0)
-            {
-
-              if (p1joined)
-              {
-                verticalLayoutLeft.transform.GetChild(0).gameObject.SetActive(false);
-                verticalLayoutRight.transform.GetChild(0).gameObject.SetActive(true);
-                p1placement = 2;
-              }
-              verticalLayoutLeft.transform.GetChild(1).GetComponent<Button>().Select();
-              verticalLayoutLeft.transform.GetChild(1).GetComponent<UIButton>().ExecuteClick();
-
-            }
-            else if (p2placement == 2)
-            {
-
-              if (p1joined)
-              {
-                verticalLayoutRight.transform.GetChild(0).gameObject.SetActive(false);
-                verticalLayoutLeft.transform.GetChild(0).gameObject.SetActive(true);
-                p1placement = 0;
-              }
-              verticalLayoutRight.transform.GetChild(1).GetComponent<Button>().Select();
-              verticalLayoutRight.transform.GetChild(1).GetComponent<UIButton>().ExecuteClick();
-
-            }
+            manette2.GetComponent<Button>().interactable = true;
+            p2HasChosen = false;
           }
         }
       }
 
     }
-
-    /*
-
-    for (int i = 0; i < ReInput.players.playerCount; i++)
-    {
-      if ((ReInput.players.GetPlayer(i).GetButtonDown("Fire")) && (numberPlayersReady >= 1))
-      {
-        Debug.Log("Start game");
-        if (numberPlayersReady == 1)
-          configGame.InitConfigGame(1, 0, new List<int> { 0 }, null);
-        else if (numberPlayersReady == 2)
-          configGame.InitConfigGame(1, 1, new List<int> { 0 }, new List<int> { 1 });
-        else if (numberPlayersReady == 3)
-          configGame.InitConfigGame(2, 1, new List<int> { 0, 2 }, new List<int> { 1 });
-        else if (numberPlayersReady == 4)
-          configGame.InitConfigGame(2, 2, new List<int> { 0, 2 }, new List<int> { 1, 3 });
-
-
-        SceneManager.LoadScene("MainGameScene");
-        MusicEmitter.TransitionToBattleMusic();
-      }
-    }*/
-
-
   }
 
   public void EnableJoinGame()
