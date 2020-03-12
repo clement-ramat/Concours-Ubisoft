@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{4e0276b0-2d9f-4138-8ff9-0624e608decd}">
+		<property name="name">
+			<value>Piano Note</value>
+		</property>
+		<relationship name="folder">
+			<destination>{cfbadd9c-4703-4aec-bee1-8c6497e7f9cd}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{61542847-d48a-41d2-aae9-99f8c5d91d9f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{61542847-d48a-41d2-aae9-99f8c5d91d9f}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>6</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

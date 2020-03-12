@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: BehaviourTree_Catch
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_action":{"speed":{"_name":"moveSpeed","_targetVariableID":"f87baa8e-0762-4986-a8b5-d7b6929a5870"},"fledDistance":{"_value":10.0},"lookAhead":{"_value":2.0},"graph":{"_name":"Graph","_targetVariableID":"ed182beb-05d1-4ea3-a871-d0bdae6a7767"},"$type":"NodeCanvas.Tasks.Actions.FleeFromPlayersGraph"},"_position":{"x":759.0,"y":139.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{"WanderWeight":{"_name":"WanderWeight","_id":"716ab9c1-8e38-4871-9887-b9447b2685b8","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"TestWeight":{"_name":"TestWeight","_id":"6b607816-d735-40b7-9596-c1208c2e6b20","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"PossessWeight":{"_value":10.0,"_name":"PossessWeight","_id":"0fc8de46-4cbf-4b7c-ade7-31a0dba1dc22","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.03
+    _category: 
+    _comments: 
+    _translation: {x: -525, y: 163}
+    _zoomFactor: 1
+  _haltSerialization: 0

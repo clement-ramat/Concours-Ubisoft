@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3596421125110072975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3596421125110072973}
+  - component: {fileID: 3596421125110072972}
+  - component: {fileID: 2149090023241490615}
+  - component: {fileID: 1373704441}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3596421125110072973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596421125110072975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 339.4583, y: 203.79512, z: -537.5369}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3596421125110072972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596421125110072975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08341c5079ceff34092e79dafb5fef31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueList: []
+  popupName: DialogText
+  characterType:
+    globalVariable: {fileID: 11400000, guid: df62a133da423ab4eaa2301ed38e0fce, type: 2}
+    localValue: 0
+    useLocal: 0
+  ghost: {fileID: 11400000, guid: 34bfccd0fb93a1e40a664d1b107b8b76, type: 2}
+  human: {fileID: 11400000, guid: 3d339588387c5544cbb75a8a3c2daf15, type: 2}
+  HUD: {fileID: 0}
+  stephImage: {fileID: 21300000, guid: 27e3979cdf07ef744973a47ce610ed43, type: 3}
+  etienneImage: {fileID: 21300000, guid: 486bfa51a226b424f8706e49f9a645f8, type: 3}
+--- !u!114 &2149090023241490615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596421125110072975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454463c371c126748a12cf8bd367c86b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalGameObject: {fileID: 11400000, guid: adbe9a624829f944b991c869c549a27b, type: 2}
+--- !u!114 &1373704441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596421125110072975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX 2D/typewriter_UI
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 80

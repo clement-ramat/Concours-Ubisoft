@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008064dd6e21354479efe0bf703b5409, type: 3}
+  m_Name: ObtentionAP1
+  m_EditorClassIdentifier: 
+  nextText: {fileID: 11400000, guid: 17f96cde70611eb438fb539d010836aa, type: 2}
+  personSpeaking: Narrator
+  isTextDifferentSelonJoueur: 1
+  isAnimationDifferentSelonJoueur: 0
+  textToShowHuman: "You got Etienne's old camera! \nEtienne can now reveal ennemies
+    to help you when he is close to them."
+  textToShowGhost: 'Steph obtained your old camera!
+
+    To help her, you can now reveal ennemies by pressing B when you are close to them.'
+  textToShowInPopup: 'Steph obtained your old camera!
+
+    She can now flash ennemies to destroy them, but only when she can see them!'
+  animationToShowHuman: {fileID: 9100000, guid: ff869ca6ed7d6ba4882ff6fdf406e8af,
+    type: 2}
+  animationToShowGhost: {fileID: 9100000, guid: e57a246afef7daa48a2320321e506b60,
+    type: 2}
+  animationToShowInPopup: {fileID: 9100000, guid: e57a246afef7daa48a2320321e506b60,
+    type: 2}
