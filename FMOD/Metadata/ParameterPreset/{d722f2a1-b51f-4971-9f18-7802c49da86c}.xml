@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{d722f2a1-b51f-4971-9f18-7802c49da86c}">
+		<property name="name">
+			<value>Jingle Num</value>
+		</property>
+		<relationship name="folder">
+			<destination>{cfbadd9c-4703-4aec-bee1-8c6497e7f9cd}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4b9cf92f-0c5f-4514-90f2-37c4e3c7a40c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4b9cf92f-0c5f-4514-90f2-37c4e3c7a40c}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

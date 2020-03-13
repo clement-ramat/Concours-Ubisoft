@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{0a9b8916-ed12-4776-a633-fcd9cc24cc39}">
+		<property name="assetPath">
+			<value>SFX/gramophone_4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.9034013605442177</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a9a1e79f-92c9-4791-af23-283c0fbbe02b}</destination>
+		</relationship>
+	</object>
+</objects>

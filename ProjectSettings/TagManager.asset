@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - Human
+  - Ghost
+  - Interactable
+  - MusicManager
   layers:
   - Default
   - TransparentFX
@@ -17,19 +21,19 @@ TagManager:
   - Ground
   - Ghost
   - TraversableGhost
-  - 
+  - AreaInteractable
   - Player
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Walll
+  - PostProcessing
+  - Furniture
+  - ObjectInteractable
+  - OnlyGhost
+  - OnlyObjectInteractable
+  - OnlyHumanAndObjects
+  - GhostEnemy
+  - MirrorWall
+  - HeavyObjectInteractable
+  - MirrorDontSee
   - 
   - 
   - 

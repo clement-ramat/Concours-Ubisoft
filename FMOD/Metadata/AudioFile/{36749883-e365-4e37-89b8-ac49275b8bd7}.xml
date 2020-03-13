@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{36749883-e365-4e37-89b8-ac49275b8bd7}">
+		<property name="assetPath">
+			<value>323414__sethroph__glass-slide-2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.92690625000000004</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a9a1e79f-92c9-4791-af23-283c0fbbe02b}</destination>
+		</relationship>
+	</object>
+</objects>

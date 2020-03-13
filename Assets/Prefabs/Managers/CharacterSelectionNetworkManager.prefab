@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4507047462939470498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4507047462939470526}
+  - component: {fileID: 4507047462939470524}
+  - component: {fileID: 4507047462939470525}
+  - component: {fileID: 4507047462939470527}
+  m_Layer: 0
+  m_Name: CharacterSelectionNetworkManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4507047462939470526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4507047462939470498}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.19841, y: -2.3206816, z: 60.498962}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4507047462939470524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4507047462939470498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7424c1070fad4ba2a7a96b02fbeb4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClientConnected:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnClientDataReceived:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Mirror.ClientDataReceivedEvent, Mirror, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnClientError:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Mirror.UnityEventException, Mirror, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnClientDisconnected:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnServerConnected:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Mirror.UnityEventInt, Mirror, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnServerDataReceived:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Mirror.ServerDataReceivedEvent, Mirror, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnServerError:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Mirror.UnityEventIntException, Mirror, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnServerDisconnected:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Mirror.UnityEventInt, Mirror, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  port: 7777
+  NoDelay: 1
+  serverMaxMessageSize: 16384
+  clientMaxMessageSize: 16384
+--- !u!114 &4507047462939470525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4507047462939470498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65b378acd6d54540a81a7ae3dbc9085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
+  runInBackground: 1
+  startOnHeadless: 1
+  serverTickRate: 60
+  showDebugMessages: 0
+  offlineScene: Main Menu
+  onlineScene: 
+  transport: {fileID: 4507047462939470524}
+  networkAddress: localhost
+  maxConnections: 2
+  authenticator: {fileID: 0}
+  playerPrefab: {fileID: 1919505890251135132, guid: f460729361fc59447b873817c3803f18,
+    type: 3}
+  autoCreatePlayer: 0
+  playerSpawnMethod: 0
+  spawnPrefabs:
+  - {fileID: 7378318536536428569, guid: 86413e4d0823e07489b47c8a6c6ce289, type: 3}
+  - {fileID: 6611616737303927609, guid: 6ef7f2b55465f5348836478b0eccd24a, type: 3}
+  - {fileID: 7966062821165130707, guid: 1facd011df3d13d4d80f3092a3fb3212, type: 3}
+  - {fileID: 2483862188618100016, guid: 926fd98a994d73c4b80a695067324b7f, type: 3}
+  - {fileID: 2483862188618100016, guid: 45f3652e65c689548aa8bdde2009d4fe, type: 3}
+  - {fileID: 7711436748424081211, guid: 8a5dde7f4ef20914fac5b26743b5f19c, type: 3}
+  - {fileID: 7711436748424081211, guid: e2efe08e252729b498b3083e550daa24, type: 3}
+  - {fileID: 7711436748424081211, guid: 924907af15eec8d41bc759445d1b44f2, type: 3}
+  - {fileID: 2391230487215956939, guid: f3ebab43e31787148b373310ad08a0db, type: 3}
+  - {fileID: 6011497874260892779, guid: 736c21bd5111d1c4083b0780a679e02d, type: 3}
+  playerControllerPrefab: {fileID: 7378318536536428569, guid: 86413e4d0823e07489b47c8a6c6ce289,
+    type: 3}
+  ghostPrefab: {fileID: 7966062821165130707, guid: 1facd011df3d13d4d80f3092a3fb3212,
+    type: 3}
+  humanPrefab: {fileID: 6611616737303927609, guid: 6ef7f2b55465f5348836478b0eccd24a,
+    type: 3}
+  p1Character: 0
+  p2Character: 0
+  gameScene: {fileID: 11400000, guid: ae81c15bc7c5c8c4b8076dba9a8ce676, type: 2}
+  globalSceneLoaderManager: {fileID: 11400000, guid: 02d82266689a933429509671a3ebf0e5,
+    type: 2}
+  playerAbilities: {fileID: 11400000, guid: 18751c90fc1d42440a75395f6e3ba51c, type: 2}
+  paintingsObtained: {fileID: 11400000, guid: 5a7952b339b2b8b4a9e1a4e83f669528, type: 2}
+--- !u!114 &4507047462939470527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4507047462939470498}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showGUI: 1
+  offsetX: 0
+  offsetY: 0

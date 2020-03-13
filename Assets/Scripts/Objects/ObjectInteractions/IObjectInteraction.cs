@@ -1,12 +1,38 @@
-﻿using System.Collections;
+﻿using Mirror;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IObjectInteraction
-{
-    // Action triggered by the Human player's Action button
-    void HumanAction(Human character);
 
-    // Action triggered by the Ghost player's Action button
-    void GhostAction(Ghost character);
+[SelectionBase]
+public class IObjectInteraction : NetworkBehaviour
+{
+    public int interactionPriority = 0;
+
+    public bool allowHighlighting = true;
+
+    private bool canBeInteractWith = true;
+
+    public bool CanBeInteractWith
+    {
+        get
+        {
+            return canBeInteractWith;
+        }
+        set
+        {
+            canBeInteractWith = value;
+        }
+    }
+
+}
+
+public class IGhostInteraction : IObjectInteraction
+{
+
+}
+
+public class IHumanInteraction : IObjectInteraction
+{
+
 }

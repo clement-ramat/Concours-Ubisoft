@@ -1,24 +1,108 @@
-﻿using System;
+﻿using Mirror;
+using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+
+[System.Serializable]
+public class UnityEventFloat2 : UnityEvent<float, float>
+{
+
+}
 
 /// <summary>
 /// Component to call for possessing objects actions
 /// </summary>
-public abstract class PossessInteraction : MonoBehaviour, IObjectInteraction
+public abstract class PossessInteraction : IGhostInteraction
 {
 
-    public virtual void OnPossess() { }
-    public virtual void OnUnpossess() { }
+    /// <summary>
+    /// Tell the ghost how to unpossess this object, if true try first behind him and if false from forward.
+    /// </summary>
+    public bool ghostUnpossessFromBehindFirst = true;
 
-    public abstract void GhostAction(Ghost character);
+    [SerializeField][ReadOnly]
+    private Possesser possessedBy = null;
 
-    public abstract void JoystickInteraction(Vector2 inputAxis);
+    [Title("Possess Interaction Events")]
+    [SerializeField]
+    private UnityEvent OnPossessEvent = new UnityEvent();
 
-    public void HumanAction(Human character)
+    [SerializeField]
+    private UnityEvent OnUnpossessEvent = new UnityEvent();
+
+    [Title("Possess Interaction Vibration")]
+    public float possessVibrationPower = 0.2f;
+
+    public float possessVibrationDuration = 0.2f;
+
+    public UnityEventFloat2 OnMakeVibration;
+
+    private bool isPossessed = false;
+    
+
+    public bool IsPossessed
     {
-        //None, players can't possess objects.
+        get
+        {
+            return isPossessed;
+        }
     }
+    
+
+    public Possesser PossessedBy { get => possessedBy; set => possessedBy = value; }
+
+    public bool ForceUnpossess()
+    {
+        if (!isPossessed)
+        {
+            return false;
+        }
+        
+        possessedBy.Unpossess();
+
+        return true;
+
+    }
+
+    public virtual void OnUnpossess()
+    {
+        isPossessed = false;
+        OnUnpossessEvent?.Invoke();
+        OnMakeVibration?.Invoke(possessVibrationPower, possessVibrationDuration);
+
+        RpcOnUnpossess();
+    }
+
+    public virtual void OnPossess()
+    {
+        isPossessed = true;
+        OnPossessEvent?.Invoke();
+        OnMakeVibration?.Invoke(possessVibrationPower, possessVibrationDuration);
+
+        RpcOnPossess();
+
+    }
+    
+
+    [ClientRpc]
+    public void RpcOnPossess()
+    {
+        isPossessed = true;
+        OnPossessEvent?.Invoke();
+        
+    }
+
+    [ClientRpc]
+    public void RpcOnUnpossess()
+    {
+        isPossessed = false;
+        OnUnpossessEvent?.Invoke();
+    }
+
+    public abstract void JoystickInteraction(Vector3 inputAxis);
 
 }

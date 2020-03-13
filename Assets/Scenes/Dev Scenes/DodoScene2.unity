@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -189,23 +189,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1671283602270217691, guid: 6ef7f2b55465f5348836478b0eccd24a,
         type: 3}
+      propertyPath: m_AssetId
+      value: 6ef7f2b55465f5348836478b0eccd24a
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671283602270217691, guid: 6ef7f2b55465f5348836478b0eccd24a,
+        type: 3}
       propertyPath: m_SceneId
-      value: 562090512
+      value: 1689641600
       objectReference: {fileID: 0}
-    - target: {fileID: 4269130324445878455, guid: 6ef7f2b55465f5348836478b0eccd24a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2848475366733419963, guid: 6ef7f2b55465f5348836478b0eccd24a,
-        type: 3}
-      propertyPath: serializationData.Prefab
-      value: 
-      objectReference: {fileID: 2848475366733419963, guid: 6ef7f2b55465f5348836478b0eccd24a,
-        type: 3}
-    m_RemovedComponents:
-    - {fileID: 4269130324445878455, guid: 6ef7f2b55465f5348836478b0eccd24a, type: 3}
-    - {fileID: 1671283602270217691, guid: 6ef7f2b55465f5348836478b0eccd24a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ef7f2b55465f5348836478b0eccd24a, type: 3}
 --- !u!1 &247477345
 GameObject:
@@ -219,8 +211,8 @@ GameObject:
   - component: {fileID: 247477350}
   - component: {fileID: 247477349}
   - component: {fileID: 247477348}
-  - component: {fileID: 247477347}
   - component: {fileID: 247477351}
+  - component: {fileID: 247477347}
   m_Layer: 0
   m_Name: LightCube (3)
   m_TagString: Untagged
@@ -251,7 +243,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 247477345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 814c9279fc376c448bf7452550ecff0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e2b20f7831cdc243935d6721c9b839b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &247477348
@@ -325,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10b1df9a60591045aa6a0afdb7540f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mat: {fileID: 0}
 --- !u!1 &294748849
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,8 +330,8 @@ GameObject:
   - component: {fileID: 294748853}
   - component: {fileID: 294748852}
   - component: {fileID: 294748851}
-  - component: {fileID: 294748850}
   - component: {fileID: 294748855}
+  - component: {fileID: 294748850}
   m_Layer: 0
   m_Name: LightCube
   m_TagString: Untagged
@@ -355,7 +348,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 294748849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 814c9279fc376c448bf7452550ecff0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e2b20f7831cdc243935d6721c9b839b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &294748851
@@ -443,6 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10b1df9a60591045aa6a0afdb7540f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mat: {fileID: 0}
 --- !u!1 &318958600
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,8 +540,8 @@ GameObject:
   - component: {fileID: 346752925}
   - component: {fileID: 346752924}
   - component: {fileID: 346752923}
-  - component: {fileID: 346752922}
   - component: {fileID: 346752926}
+  - component: {fileID: 346752922}
   m_Layer: 0
   m_Name: LightCube (1)
   m_TagString: Untagged
@@ -578,7 +572,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 346752920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 814c9279fc376c448bf7452550ecff0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e2b20f7831cdc243935d6721c9b839b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &346752923
@@ -652,6 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10b1df9a60591045aa6a0afdb7540f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mat: {fileID: 0}
 --- !u!1 &640372314
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,8 +785,8 @@ GameObject:
   - component: {fileID: 1056978429}
   - component: {fileID: 1056978428}
   - component: {fileID: 1056978427}
-  - component: {fileID: 1056978426}
   - component: {fileID: 1056978430}
+  - component: {fileID: 1056978426}
   m_Layer: 0
   m_Name: LightCube (2)
   m_TagString: Untagged
@@ -822,7 +817,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1056978424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 814c9279fc376c448bf7452550ecff0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e2b20f7831cdc243935d6721c9b839b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1056978427
@@ -896,6 +891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10b1df9a60591045aa6a0afdb7540f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mat: {fileID: 0}
 --- !u!1 &1852805787
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,8 +987,8 @@ GameObject:
   - component: {fileID: 1961881723}
   - component: {fileID: 1961881722}
   - component: {fileID: 1961881721}
-  - component: {fileID: 1961881720}
   - component: {fileID: 1961881724}
+  - component: {fileID: 1961881720}
   m_Layer: 0
   m_Name: LightCube (4)
   m_TagString: Untagged
@@ -1023,7 +1019,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1961881718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 814c9279fc376c448bf7452550ecff0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e2b20f7831cdc243935d6721c9b839b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1961881721
@@ -1097,6 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10b1df9a60591045aa6a0afdb7540f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mat: {fileID: 0}
 --- !u!1001 &3480021585422541222
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{e568391b-a0fa-472b-b5d3-049cf45cddd3}">
+		<property name="name">
+			<value>PortraitFound</value>
+		</property>
+		<relationship name="folder">
+			<destination>{cfbadd9c-4703-4aec-bee1-8c6497e7f9cd}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4194571e-d4bb-4a46-98ef-fc99bedacf6b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4194571e-d4bb-4a46-98ef-fc99bedacf6b}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1.0000001192092896</value>
+		</property>
+	</object>
+</objects>

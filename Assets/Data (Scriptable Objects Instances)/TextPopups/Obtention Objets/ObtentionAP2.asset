@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008064dd6e21354479efe0bf703b5409, type: 3}
+  m_Name: ObtentionAP2
+  m_EditorClassIdentifier: 
+  nextText: {fileID: 0}
+  personSpeaking: Narrator
+  isTextDifferentSelonJoueur: 1
+  isAnimationDifferentSelonJoueur: 0
+  textToShowHuman: You can now flash ennemies by pressing B to destroy them temporarily,
+    but only once Etienne has revealed them.
+  textToShowGhost: She can now flash ennemies to destroy them temporarily, but only
+    once you have revealed them.
+  textToShowInPopup: To help her, you can now reveal ennemies by pressing B when you
+    are close to them.
+  animationToShowHuman: {fileID: 0}
+  animationToShowGhost: {fileID: 0}
+  animationToShowInPopup: {fileID: 9100000, guid: ff869ca6ed7d6ba4882ff6fdf406e8af,
+    type: 2}

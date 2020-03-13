@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{deababbb-f317-4e31-94ca-f9b39b958c21}">
+		<property name="name">
+			<value>TypewriterNb</value>
+		</property>
+		<relationship name="folder">
+			<destination>{cfbadd9c-4703-4aec-bee1-8c6497e7f9cd}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{38d6ae6d-9fd3-4c04-8291-0ab33299bb5a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{38d6ae6d-9fd3-4c04-8291-0ab33299bb5a}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

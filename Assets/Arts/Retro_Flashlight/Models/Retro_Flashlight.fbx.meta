@@ -1,0 +1,107 @@
+fileFormatVersion: 2
+guid: 84b534947260f2e4ea8c33d60658bc00
+timeCreated: 1539541838
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Retro_Flashlight_Glass
+    100004: Retro_Flashlight_Switcher
+    100006: Retro_Flashlight_Tuning
+    100008: Retro_Flashlight_Volume
+    400000: //RootNode
+    400002: Retro_Flashlight_Glass
+    400004: Retro_Flashlight_Switcher
+    400006: Retro_Flashlight_Tuning
+    400008: Retro_Flashlight_Volume
+    2300000: //RootNode
+    2300002: Retro_Flashlight_Glass
+    2300004: Retro_Flashlight_Switcher
+    2300006: Retro_Flashlight_Tuning
+    2300008: Retro_Flashlight_Volume
+    3300000: //RootNode
+    3300002: Retro_Flashlight_Glass
+    3300004: Retro_Flashlight_Switcher
+    3300006: Retro_Flashlight_Tuning
+    3300008: Retro_Flashlight_Volume
+    4300000: Retro_Flashlight
+    4300002: Retro_Flashlight_Glass
+    4300004: Retro_Flashlight_Volume
+    4300006: Retro_Flashlight_Tuning
+    4300008: Retro_Flashlight_Switcher
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
